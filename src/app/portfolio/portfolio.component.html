@@ -1,1 +1,36 @@
 <p>portfolio works!</p>
+<table class="table table-condensed table-striped table-dark"
+cdk-table
+  [dataSource]="portfolioDataSource" >
+
+  <ng-container cdkColumnDef="company">
+    <th cdk-header-cell *cdkHeaderCellDef>Company</th>
+    <td cdk-cell *cdkCellDef="let element">{{element.company}}</td>
+  </ng-container>
+  
+  <ng-container cdkColumnDef="investedValue">
+    <th cdk-header-cell *cdkHeaderCellDef>Invested Value</th>
+    <td cdk-cell *cdkCellDef="let element">{{element.investedValue}}</td>
+  </ng-container>
+  
+  <ng-container cdkColumnDef="marketValue">
+    <th cdk-header-cell *cdkHeaderCellDef>Market Value</th>
+    <td cdk-cell *cdkCellDef="let element">{{element.marketValue}}</td>
+  </ng-container>
+  
+  <ng-container cdkColumnDef="todayChange">
+    <th cdk-header-cell *cdkHeaderCellDef>Today's Change</th>
+    <td cdk-cell *cdkCellDef="let element">{{element.todayChange}}</td>
+  </ng-container>
+
+  <thead>
+    <tr cdk-header-row *cdkHeaderRowDef="DisplayedColumns"></tr>
+  </thead>
+
+  <tbody>
+    <tr cdk-row *cdkRowDef="let row; columns: DisplayedColumns;"></tr>
+  </tbody>
+  
+</table>
+
+

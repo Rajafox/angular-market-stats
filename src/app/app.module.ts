@@ -13,6 +13,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { MarketsComponent } from './markets/markets.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { ResearchComponent } from './research/research.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {CdkTableModule} from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ResearchComponent } from './research/research.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CdkTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
