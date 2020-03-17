@@ -10,7 +10,7 @@ cdk-table
   
   <ng-container cdkColumnDef="investedValue">
     <th cdk-header-cell *cdkHeaderCellDef>Invested Value</th>
-    <td cdk-cell *cdkCellDef="let element">{{element.investedValue}}</td>
+    <td cdk-cell *cdkCellDef="let element">{{element.investedValue | currency }}</td>
   </ng-container>
   
   <ng-container cdkColumnDef="marketValue">
