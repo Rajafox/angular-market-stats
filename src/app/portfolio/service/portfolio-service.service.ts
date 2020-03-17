@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PortfolioResults } from './models/portfolio-results.model';
+import { PortfolioResults } from '../../models/portfolio-results.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +19,5 @@ export class PortfolioServiceService {
   public getUserPortfolioData(): PortfolioResults[]{
     return this.portfolioData;
   }
-]
+
 }

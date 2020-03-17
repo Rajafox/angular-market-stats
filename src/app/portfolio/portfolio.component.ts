@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PortfolioResults} from '../models/portfolio-results.model';
 import {BehaviorSubject} from 'rxjs';
-import { PortfolioServiceService } from '../portfolio-service.service';
+import { PortfolioServiceService } from './service/portfolio-service.service';
 
 @Component({
   selector: 'app-portfolio',

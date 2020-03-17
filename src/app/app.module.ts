@@ -16,7 +16,7 @@ import { ResearchComponent } from './research/research.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
 
-import {PortfolioServiceService} from './portfolio-service.service';
+import {PortfolioServiceService} from './portfolio/service/portfolio-service.service';
 
 @NgModule({
   declarations: [
