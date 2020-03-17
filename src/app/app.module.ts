@@ -16,6 +16,8 @@ import { ResearchComponent } from './research/research.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
 
+import {PortfolioServiceService} from './portfolio-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,7 @@ import {CdkTableModule} from '@angular/cdk/table';
     BrowserAnimationsModule,
     CdkTableModule
   ],
-  providers: [],
+  providers: [ PortfolioServiceService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
