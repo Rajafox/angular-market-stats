@@ -1,0 +1,55 @@
+<div class="row ">
+    <div class="col-lg-4 stokcol">
+        <div class="row ">
+            <div class="col-lg-12">
+                Stock:
+                <hr class="style-two"/>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                Day's Gain
+                <div>
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item">312</li>
+                        <li class="list-group-item">+2%</li>
+                      </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                Unrealized Gain
+                <div [ngClass] = "{'profit': isGain() , 'loss': isLoss() }" >
+                   {{unrealizedGain}}
+                </div>
+            </div>
+        </div>
+        <!-- <div class="stokcol">
+            <div class="stokcol2">
+                <div class="stokcol3">
+                    <div class="stokcol4">
+                        Stock:
+                    </div>
+                    <hr class="style-two"/>
+                </div>
+                <div class="red-box stokcol5">
+                    <div class="stokcol6">
+                        Day's Gain
+                    </div>
+                    <div>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item"></li>
+                            <li class="list-group-item">312</li>
+                            <li class="list-group-item">+2%</li>
+                          </ul>
+                    </div>
+                </div>
+                <div class="red-box stokcol7"></div>
+            </div>
+        </div> -->
+    </div>
+    <div class="col-lg-4">Mutual Funds</div>
+    <div class="col-lg-4">Total Investment summary</div>
+  
+  </div>

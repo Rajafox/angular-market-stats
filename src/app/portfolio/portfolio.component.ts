@@ -11,19 +11,37 @@ import { PortfolioServiceService } from './service/portfolio-service.service';
 })
 export class PortfolioComponent implements OnInit {
 
+  public unrealizedProfit:number = 0;
   constructor( private portfoliService : PortfolioServiceService) {
-    this.portfolioDataSource = new BehaviorSubject<PortfolioResults[]>(
-      portfoliService.getUserPortfolioData()
-    );
+    this.portfolioDataSource = new BehaviorSubject<PortfolioResults[]>( [] );
+    this.portfoliService.getUserPortfolioData().subscribe({
+      next: v => {
+        this.getUnrealizedProfit(v);
+        this.portfolioDataSource.next(v)
+      },
+      error: v => this.portfolioDataSource.error(v),
+      complete: () => this.portfolioDataSource.complete()
+    });
    }
 
+   public isProfit(element:any):boolean{
+     return ( (element.investedValue - element.marketValue )>0 );
+   }
+
+   public isLoss(element:any):boolean{
+    return !this.isProfit(element);
+  }
   
   ngOnInit(): void {
   }
 
-  
+  public getUnrealizedProfit(results:PortfolioResults[]):void{
+    for(let result of results){
+      this.unrealizedProfit = this.unrealizedProfit + (result.investedValue - result.marketValue );
+    }
+  }
 
   public portfolioDataSource: BehaviorSubject<PortfolioResults[]>;
-  public DisplayedColumns: string[] = ['company', 'investedValue', 'marketValue', `todayChange`];
+  public DisplayedColumns: string[] = ['company', 'investedValue', 'marketValue', `todayChange`, 'profitLoss'];
 
 }

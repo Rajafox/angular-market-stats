@@ -9,14 +9,12 @@ import { SearchAreaComponent } from './search-area/search-area.component';
 import { LiveMarketBannerComponent } from './header/live-market-banner/live-market-banner.component';
 import { MainNavigationBannerComponent } from './header/main-navigation-banner/main-navigation-banner.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
 import { MarketsComponent } from './markets/markets.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { ResearchComponent } from './research/research.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {CdkTableModule} from '@angular/cdk/table';
+import { HttpClientModule } from '@angular/common/http';
+import { PortfolioModule } from './portfolio/portfolio.module';
 
-import {PortfolioServiceService} from './portfolio/service/portfolio-service.service';
 
 @NgModule({
   declarations: [
@@ -26,19 +24,20 @@ import {PortfolioServiceService} from './portfolio/service/portfolio-service.ser
     SearchAreaComponent,
     LiveMarketBannerComponent,
     MainNavigationBannerComponent,
-    PageNotFoundComponent,
-    PortfolioComponent,
+    PageNotFoundComponent,   
     MarketsComponent,
     WatchlistComponent,
     ResearchComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    CdkTableModule
+    HttpClientModule,
+    PortfolioModule
+   
   ],
-  providers: [ PortfolioServiceService ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

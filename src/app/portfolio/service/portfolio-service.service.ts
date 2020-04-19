@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PortfolioResults } from '../../models/portfolio-results.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +16,10 @@ export class PortfolioServiceService {
     { company: 'IGL', investedValue: 10000, marketValue: 20000, todayChange: '+10' }
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  public getUserPortfolioData(): PortfolioResults[]{
-    return this.portfolioData;
+  public getUserPortfolioData(): Observable<PortfolioResults[]>{
+    return this.http.get<PortfolioResults[]>('./assets/portfolio-grid-data.json');
   }
 
 }
