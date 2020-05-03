@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SearchAreaComponent } from './search-area/search-area.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { MarketsComponent } from './markets/markets.component';
-import { ResearchComponent } from './research/research.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { WatchlistComponent } from './watchlist/watchlist.component';
+import { SearchAreaComponent } from './modules/home/components/search-area/search-area.component';
+import { PageNotFoundComponent } from './common/components/page-not-found/page-not-found.component';
+import { MarketMainComponent } from './modules/markets/components/market-main/market-main.component';
+import { ResearchMainComponent } from './modules/research/components/research-main/research-main.component';
+import { PortfolioMainComponent } from './modules/portfolio/components/portfolio-main/portfolio-main.component';
+import { WatchlistMainComponent } from './modules/watchlist/components/watchlist-main/watchlist-main.component';
 
 
 const routes: Routes = [
@@ -20,19 +20,19 @@ const routes: Routes = [
   },
   {
     path:"markets",
-    component:MarketsComponent
+    component:MarketMainComponent
   },
   {
     path:"portfolio",
-    component:PortfolioComponent
+    component:PortfolioMainComponent
   },
   {
     path:"watchlist",
-    component:WatchlistComponent
+    component:WatchlistMainComponent
   },
   {
     path:"research",
-    component:ResearchComponent
+    component:ResearchMainComponent
   },
   {
     path:"**",

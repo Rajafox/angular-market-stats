@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {PortfolioResults} from '../models/portfolio-results.model';
-import {BehaviorSubject} from 'rxjs';
-import { PortfolioServiceService } from './service/portfolio-service.service';
+import { PortfolioServiceService } from '../../services/portfolio-service.service';
+import { PortfolioResults } from '../../models/portfolio-results.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
-  selector: 'app-portfolio',
-  templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.scss'],
-  providers: []
+  selector: 'app-portfolio-main',
+  templateUrl: './portfolio-main.component.html',
+  styleUrls: ['./portfolio-main.component.scss']
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioMainComponent implements OnInit {
 
   public unrealizedProfit:number = 0;
   constructor( private portfoliService : PortfolioServiceService) {
