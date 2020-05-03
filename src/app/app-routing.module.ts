@@ -6,6 +6,7 @@ import { MarketMainComponent } from './modules/markets/components/market-main/ma
 import { ResearchMainComponent } from './modules/research/components/research-main/research-main.component';
 import { PortfolioMainComponent } from './modules/portfolio/components/portfolio-main/portfolio-main.component';
 import { WatchlistMainComponent } from './modules/watchlist/components/watchlist-main/watchlist-main.component';
+import { HomeModule } from './modules/home/home.module';
 
 
 const routes: Routes = [
@@ -15,24 +16,24 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path:"home",
-    component:SearchAreaComponent
+    path:'home',
+    loadChildren:() => import('./modules/home/home.module').then(mod => mod.HomeModule)
   },
   {
     path:"markets",
-    component:MarketMainComponent
+    loadChildren:() => import('./modules/markets/markets.module').then(mod => mod.MarketsModule)
   },
   {
     path:"portfolio",
-    component:PortfolioMainComponent
+    loadChildren:() => import('./modules/portfolio/portfolio.module').then(mod => mod.PortfolioModule)
   },
   {
     path:"watchlist",
-    component:WatchlistMainComponent
+    loadChildren:() => import('./modules/watchlist/watchlist.module').then(mod => mod.WatchlistModule)
   },
   {
     path:"research",
-    component:ResearchMainComponent
+    loadChildren:() => import('./modules/research/research.module').then(mod => mod.ResearchModule)
   },
   {
     path:"**",

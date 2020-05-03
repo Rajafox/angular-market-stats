@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WatchlistMainComponent } from './components/watchlist-main/watchlist-main.component';
 
+import { WatchlistRoutingModule } from './watchlist-routing.module';
 
 
 @NgModule({
-  declarations: [WatchlistMainComponent],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    WatchlistRoutingModule
   ]
 })
 export class WatchlistModule { }
