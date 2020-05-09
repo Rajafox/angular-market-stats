@@ -1,36 +1,36 @@
 <h1 mat-dialog-title>{{data.title}}</h1>
-<form #stockAddForm = 'ngForm' (ngSubmit)='onStockAdditionSubmit(stockAddForm)' >
+<form [formGroup]="stockAddFormGroup" (ngSubmit)="onStockAdditionSubmit()">
       <div mat-dialog-content>
    
         <div class="form-group">
             <label for="companyName">Company name</label>
-            <input type="text" class="form-control" id="companyName" name="companyName" #companyName="ngModel" [(ngModel)]="stock.companyName" required>
+            <input type="text" class="form-control" formControlName ="companyName" id="companyName" name="companyName">
             
         </div>
-        <div [hidden]="companyName.valid || companyName.pristine"   class="alert alert-danger">Company name is mandatory</div>
+        <div [hidden]="stockAddFormControl.companyName.valid || stockAddFormControl.companyName.pristine"   class="alert alert-danger">Company name is mandatory</div>
         
         <div class="form-group">
             <label for="transactionDate">Transaction Date</label>
-            <input type="text" class="form-control" id="transactionDate" name="transactionDate" #transactionDate="ngModel" [(ngModel)]="stock.transactionDate" required>
+            <input type="text" class="form-control" id="transactionDate" formControlName ="transactionDate" name="transactionDate" >
             
         </div>
-        <div [hidden]="transactionDate.valid || transactionDate.pristine"   class="alert alert-danger">Transaction date is mandatory</div>
+        <div [hidden]="stockAddFormControl.transactionDate.valid || stockAddFormControl.transactionDate.pristine"   class="alert alert-danger">Transaction date is mandatory</div>
         
         <div class="form-group">
             <label for="quantity">Quantity</label>
-            <input type="text" class="form-control" id="quantity" name="quantity" #quantity="ngModel" [(ngModel)]="stock.quantity" required>
+            <input type="text" class="form-control" id="quantity" formControlName ="quantity" name="quantity" >
         </div>
-        <div [hidden]="quantity.valid || quantity.pristine"   class="alert alert-danger">quantity is mandatory</div>
+        <div [hidden]="stockAddFormControl.quantity.valid || stockAddFormControl.quantity.pristine"   class="alert alert-danger">quantity is mandatory</div>
 
         <div class="form-group">
             <label for="stockPrice">Stock Price</label>
-            <input type="text" class="form-control" id="stockPrice" name="stockPrice" #stockPrice="ngModel" [(ngModel)]="stock.stockPrice" required>
+            <input type="text" class="form-control" id="stockPrice" formControlName ="stockPrice" name="stockPrice" >
         </div>
-        <div [hidden]="stockPrice.valid || stockPrice.pristine"   class="alert alert-danger">stock Price is mandatory</div>
+        <div [hidden]="stockAddFormControl.stockPrice.valid || stockAddFormControl.stockPrice.pristine"   class="alert alert-danger">stock Price is mandatory</div>
 
       </div>
   <div mat-dialog-actions>   
-    <button mat-button type="submit" class = "btn btn-primary mr-1" [disabled]="!stockAddForm.form.valid" cdkFocusInitial>Add</button>
+    <button mat-button type="submit" class = "btn btn-primary mr-1" cdkFocusInitial>Add</button>
     <button mat-button  (click)="onStockAdditionCancelClick()" class = "btn btn-primary" >Cancel</button>
   </div>
 </form>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material/dialog';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material/dial
   styleUrls: ['./portfolio-stock-addition.component.scss']
 })
 export class PortfolioStockAdditionComponent implements OnInit {
-
+  stockAddFormGroup:FormGroup;
   stock : any = {
     companyName:'',
     transactionDate:'',
@@ -19,6 +20,13 @@ export class PortfolioStockAdditionComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.stockAddFormGroup = new FormGroup({
+      "companyName": new FormControl('',Validators.required),
+      "transactionDate": new FormControl('123',Validators.required),
+      "quantity": new FormControl('',Validators.required),
+      "stockPrice": new FormControl('',Validators.required)
+
+  });
   }
 
   onStockAdditionCancelClick() : void {
@@ -28,13 +36,19 @@ export class PortfolioStockAdditionComponent implements OnInit {
       quantity:'',
       stockPrice:''
     };
+   
+
     this.dialogRef.closeAll();
     console.log("cancel clicked");
   }
 
-  onStockAdditionSubmit(formValue: any): void{
-    console.log( 'submit clicked for sotck addition',formValue);
+  onStockAdditionSubmit(): void{
+    console.log( 'submit clicked for sotck addition',this.stockAddFormGroup.value);
     this.dialogRef.closeAll();
+  }
+
+  get stockAddFormControl() {
+    return this.stockAddFormGroup.controls;
   }
 
 }

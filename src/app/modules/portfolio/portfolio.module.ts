@@ -9,7 +9,7 @@ import { PortfolioDataTableComponent } from './components/portfolio-data-table/p
 import { PortfolioRoutingModule } from './portfolio-routing.module';
 import { PortfolioStockAdditionComponent } from './components/portfolio-stock-addition/portfolio-stock-addition.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     CdkTableModule,
     MatDialogModule,
-    FormsModule    
+    FormsModule,
+    ReactiveFormsModule    
   ]
 })
 export class PortfolioModule { }
