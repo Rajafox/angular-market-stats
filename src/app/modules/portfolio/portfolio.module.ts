@@ -7,7 +7,9 @@ import { PortfolioSummaryComponent } from './components/portfolio-summary/portfo
 import { PortfolioActionTabComponent } from './components/portfolio-action-tab/portfolio-action-tab.component';
 import { PortfolioDataTableComponent } from './components/portfolio-data-table/portfolio-data-table.component';
 import { PortfolioRoutingModule } from './portfolio-routing.module';
-
+import { PortfolioStockAdditionComponent } from './components/portfolio-stock-addition/portfolio-stock-addition.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,12 +17,15 @@ import { PortfolioRoutingModule } from './portfolio-routing.module';
     PortfolioMainComponent,
     PortfolioSummaryComponent,
     PortfolioActionTabComponent,
-    PortfolioDataTableComponent
+    PortfolioDataTableComponent,
+    PortfolioStockAdditionComponent
   ],
   imports: [
     PortfolioRoutingModule,
     CommonModule,
-    CdkTableModule    
+    CdkTableModule,
+    MatDialogModule,
+    FormsModule    
   ]
 })
 export class PortfolioModule { }
